@@ -12,17 +12,17 @@ const AboutUs = () => {
       
       {/* Hero Section with Photo Collage */}
       <section className="relative bg-gray-50 overflow-hidden pt-24 md:pt-32 min-h-[680px] md:h-screen">
-        <div className="container mx-auto px-4 h-full"> <br /> <br /> 
-          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center h-full gap-4 md:gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full py-8 md:py-12">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center h-full gap-6 md:gap-8 lg:gap-12">
             
             {/* Left Side - Large Image */}
             <div className="w-full md:w-1/2">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer bg-white p-4 md:p-6">
                 <Image
                   src="/assets/aboutus/1d9a11a4-e7b9-4fa7-af5d-a4763d2e72a9.JPG"
                   alt="TripSee Travels Owner"
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
                   priority
                 />
               </div>
@@ -33,42 +33,42 @@ const AboutUs = () => {
               <div className="grid grid-cols-2 gap-4">
                 
                 {/* Top Left */}
-                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer bg-white p-3 md:p-4">
                   <Image
                     src="/assets/aboutus/434aca0b-4eeb-41c6-9871-83557652217d.JPG"
                     alt="Travel destination"
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
                   />
                 </div>
  
                  {/* Top Right */}
-                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer bg-white p-3 md:p-4">
                   <Image
                     src="/assets/aboutus/1b1a11b4-7417-4a0a-ba49-057a848912cf.jpg"
                     alt="Travel destination"
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
                   />
                 </div>
  
                  {/* Bottom Left */}
-                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer bg-white p-3 md:p-4">
                   <Image
                     src="/assets/aboutus/5ab1e4ca-e116-4349-9072-c2beacc4ed16.JPG"
                     alt="Travel destination"
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
                   />
                 </div>
  
                  {/* Bottom Right */}
-                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer bg-white p-3 md:p-4">
                   <Image
                     src="/assets/aboutus/3c895894-6499-4e4b-8807-23d49803f20c.JPG"
                     alt="Travel destination"
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
                   />
                 </div>
  
