@@ -12,6 +12,7 @@ const AboutUs = () => {
       
       {/* Hero Section with Photo Collage */}
       <section className="relative bg-gray-50 overflow-hidden pt-24 md:pt-32 min-h-[680px] md:h-screen">
+        <br /><br />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full py-8 md:py-12">
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center h-full gap-6 md:gap-8 lg:gap-12">
             
@@ -19,7 +20,7 @@ const AboutUs = () => {
             <div className="w-full md:w-1/2">
               <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-lg group cursor-pointer bg-white p-4 md:p-6">
                 <Image
-                  src="/assets/aboutus/1d9a11a4-e7b9-4fa7-af5d-a4763d2e72a9.JPG"
+                  src="/assets/aboutus/img3.jpg"
                   alt="TripSee Travels Owner"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
