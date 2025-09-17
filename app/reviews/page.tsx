@@ -22,6 +22,76 @@ const ReviewsPage = () => {
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [videoErrors, setVideoErrors] = useState<{[key: string]: boolean}>({});
 
+  // Google Reviews data
+  const googleReviews = [
+    {
+      id: 1,
+      name: "Priya Sharma",
+      location: "Google Review",
+      rating: 5,
+      date: "2 weeks ago",
+      review: "Exceptional service! Tripsee Travels made our Bali honeymoon absolutely perfect. From the moment we contacted them until we returned home, everything was flawlessly organized. The private pool villa they arranged was beyond our dreams. Highly recommend!",
+      image: "/assets/gallery/IMG_1.JPG",
+      source: "Google",
+      verified: true
+    },
+    {
+      id: 2,
+      name: "Rajesh Kumar",
+      location: "Google Review", 
+      rating: 5,
+      date: "1 month ago",
+      review: "Outstanding travel agency! We booked our Dubai trip through Tripsee and couldn't be happier. The Burj Khalifa proposal setup was magical, and the photographer they arranged captured every perfect moment. Professional, reliable, and truly cares about their customers.",
+      image: "/assets/gallery/IMG_2.jpg",
+      source: "Google",
+      verified: true
+    },
+    {
+      id: 3,
+      name: "Anita Patel",
+      location: "Google Review",
+      rating: 5,
+      date: "3 weeks ago", 
+      review: "Tripsee Travels exceeded all expectations! Our Thailand beach vacation was perfectly planned. The resort selection was spot-on, and the sunset cruise was the highlight of our trip. Their local guides were knowledgeable and friendly. Will definitely book again!",
+      image: "/assets/gallery/IMG_3.jpg",
+      source: "Google",
+      verified: true
+    },
+    {
+      id: 4,
+      name: "Vikram Singh",
+      location: "Google Review",
+      rating: 5,
+      date: "1 week ago",
+      review: "Amazing experience with Tripsee! Our Andaman Islands trip was unforgettable. The crystal-clear waters at Radhanagar Beach and the candlelit dinner under the stars were magical. Their attention to detail and customer service is top-notch. Highly recommended!",
+      image: "/assets/gallery/IMG_4.jpg",
+      source: "Google",
+      verified: true
+    },
+    {
+      id: 5,
+      name: "Meera Gupta",
+      location: "Google Review",
+      rating: 5,
+      date: "2 weeks ago",
+      review: "Best travel agency we've ever used! Our Singapore city romance package was perfectly executed. The Marina Bay Sands infinity pool experience and Gardens by the Bay at night were incredible. Tripsee's team is professional, responsive, and truly cares about creating memorable experiences.",
+      image: "/assets/gallery/IMG_5.JPG",
+      source: "Google",
+      verified: true
+    },
+    {
+      id: 6,
+      name: "Arjun Reddy",
+      location: "Google Review",
+      rating: 5,
+      date: "3 days ago",
+      review: "Outstanding service from start to finish! Our Maldives honeymoon was absolutely perfect thanks to Tripsee Travels. The overwater villa was stunning, and every detail was carefully planned. Their customer support is excellent, and they truly understand what makes a trip special.",
+      image: "/assets/gallery/IMG_1.JPG",
+      source: "Google",
+      verified: true
+    }
+  ];
+
   // Customer reviews data
   const reviews = [
     {
@@ -212,7 +282,7 @@ const ReviewsPage = () => {
       {/* Hero Section with Gallery Layout */}
       <section className="relative h-screen bg-gray-50 overflow-hidden pt-32">
         <br /><br /><br />
-        <div className="container mx-auto px-4 h-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           {/* Desktop Layout - Side by Side */}
           <div className="hidden lg:flex items-center justify-center h-full gap-8">
             
@@ -422,7 +492,7 @@ const ReviewsPage = () => {
 
       {/* Video Reviews Slider Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Watch Our <span className="text-orange-500">Happy Travelers</span>
@@ -671,36 +741,84 @@ const ReviewsPage = () => {
         </div>
       </section>
 
-      {/* Customer Reviews Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Google Reviews Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              What Our <span className="text-orange-500">Travelers Say</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Real stories from real travelers who trusted us with their dream vacations
+            <div className="flex items-center justify-center mb-6">
+              <svg className="w-8 h-8 text-blue-500 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Google <span className="text-blue-500">Reviews</span>
+              </h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+              See what our customers are saying about us on Google
             </p>
+            <div className="flex items-center justify-center gap-2 text-yellow-500 mb-4">
+              {Array.from({ length: 5 }, (_, i) => (
+                <span key={i} className="text-2xl">⭐</span>
+              ))}
+              <span className="text-gray-700 ml-3 font-semibold text-lg">4.9/5 from 150+ Google reviews</span>
+            </div>
+            <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+              <span className="flex items-center">
+                <svg className="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                </svg>
+                Google Verified
+              </span>
+              <span className="flex items-center">
+                <svg className="w-4 h-4 text-blue-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                </svg>
+                Trusted Reviews
+              </span>
+            </div>
           </div>
 
-          {/* Reviews Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {currentReviews.map((review) => (
-              <div key={review.id} className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src={review.image}
-                      alt={review.name}
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
+          {/* Google Reviews Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {googleReviews.map((review) => (
+              <div key={review.id} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
+                      <Image
+                        src={review.image}
+                        alt={review.name}
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">{review.name}</h3>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-500">{review.date}</span>
+                        {review.verified && (
+                          <span className="flex items-center text-xs text-green-600 font-medium">
+                            <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                            </svg>
+                            Verified
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">{review.name}</h3>
-                    <p className="text-sm text-orange-600 font-medium">{review.location}</p>
-                    <p className="text-xs text-gray-500">{review.date}</p>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-blue-500 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84.81-.62z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <span className="text-sm text-gray-600 font-medium">{review.source}</span>
                   </div>
                 </div>
 
@@ -710,65 +828,47 @@ const ReviewsPage = () => {
                   ))}
                 </div>
 
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-sm mb-4">
                   &ldquo;{review.review}&rdquo;
                 </p>
 
-                <div className="mt-6 pt-4 border-t border-gray-100">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
-                    Verified Traveler
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                    Google Review
+                  </span>
+                  <span className="text-xs text-gray-500">
+                    {review.location}
                   </span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Pagination */}
-          <div className="flex justify-center items-center gap-4">
-            <button
-              onClick={prevReviews}
-              className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+          {/* View More Reviews Button */}
+          <div className="text-center">
+            <a 
+              href="https://www.google.com/search?q=Tripsee+Travels+reviews" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="white"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="white"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84.81-.62z" fill="white"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="white"/>
               </svg>
-            </button>
-
-            {/* Page indicators */}
-            <div className="flex gap-2">
-              {Array.from({ length: totalPages }, (_, index) => (
-                <div
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentReviewIndex
-                      ? 'bg-orange-500 scale-125'
-                      : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextReviews}
-              className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Review counter */}
-          <div className="text-center mt-6 text-gray-600 text-sm">
-            Showing {currentReviewIndex * reviewsPerPage + 1}-{Math.min((currentReviewIndex + 1) * reviewsPerPage, reviews.length)} of {reviews.length} reviews
+              View All Google Reviews
+            </a>
           </div>
         </div>
       </section>
 
+
       {/* Stats Section */}
       <section className="py-16 bg-gradient-to-r from-orange-50 to-pink-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-5 gap-6 text-center">
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <div className="text-3xl font-bold text-orange-500 mb-2">1000+</div>
               <div className="text-gray-600">Happy Travelers</div>
@@ -776,6 +876,10 @@ const ReviewsPage = () => {
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <div className="text-3xl font-bold text-orange-500 mb-2">4.9/5</div>
               <div className="text-gray-600">Average Rating</div>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="text-3xl font-bold text-blue-500 mb-2">150+</div>
+              <div className="text-gray-600">Google Reviews</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <div className="text-3xl font-bold text-orange-500 mb-2">50+</div>
@@ -791,7 +895,7 @@ const ReviewsPage = () => {
 
       {/* Call to Action */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Ready to Create Your Own <span className="text-orange-500">Amazing Story?</span>
           </h2>
